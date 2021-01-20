@@ -20,6 +20,6 @@ deploy:
     #https://www.jfrog.com/confluence/display/BT/Debian+Repositories
     #curl -T <FILE.deb> -u<USER_NAME>:<API_KEY> https://api.bintray.com/content/<USERNAME>/<REPOSITORY_NAME>/<PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>;deb_distribution=<DISTRIBUTIONS>;deb_component=<COMPONENTS>;deb_architecture=<ARCHITECTURES>
     #curl -T <FILE.deb> -ucpp-student-2020-vv:<API_KEY> https://api.bintray.com/content/noneid/otus-cpp-2020-deb/<YOUR_COOL_PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>;deb_distribution=<DISTRIBUTIONS>;deb_component=<COMPONENTS>;deb_architecture=<ARCHITECTURES>
-  - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ucpp-student-2020-vv:$BINTRAY_API_KEY "https://api.bintray.com/content/noneid/otus-cpp-2020-deb/helloworld/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=bionic;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ucpp-student-2020-vv:$BINTRAY_API_KEY "https://api.bintray.com/content/noneid/otus-cpp-2020-deb/helloworld/$TRAVIS_BUILD_NUMBER/ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=bionic;deb_component=main;deb_architecture=amd64;publish=1"
   on:
     all_branches: true
