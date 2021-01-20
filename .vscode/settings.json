@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": false,
+    "cSpell.enabled": true,
+    "cSpell.language": ",ru",
+    "cSpell.words": [
+        "otus"
+    ],
+    "cmake.configureOnOpen": true
+}

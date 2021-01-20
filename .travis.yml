@@ -1,0 +1,25 @@
+#using Ubuntu 18.04 LTS Bionic
+dist: bionic
+language: cpp
+before_script:
+- sudo apt-get install libgtest-dev -y
+- sudo apt-get install cmake -y
+- pwd
+- pushd /usr/src/googletest && sudo cmake . && sudo cmake --build . --target install && popd
+- pwd
+- sudo apt-get update -qq
+script:
+- cmake .
+- cmake --build .
+- cmake --build . --target test
+- cmake --build . --target package
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    #https://www.jfrog.com/confluence/display/BT/Debian+Repositories
+    #curl -T <FILE.deb> -u<USER_NAME>:<API_KEY> https://api.bintray.com/content/<USERNAME>/<REPOSITORY_NAME>/<PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>;deb_distribution=<DISTRIBUTIONS>;deb_component=<COMPONENTS>;deb_architecture=<ARCHITECTURES>
+    #curl -T <FILE.deb> -ucpp-student-2020-vv:<API_KEY> https://api.bintray.com/content/noneid/otus-cpp-2020-deb/<YOUR_COOL_PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>;deb_distribution=<DISTRIBUTIONS>;deb_component=<COMPONENTS>;deb_architecture=<ARCHITECTURES>
+  - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ucpp-student-2020-vv:$BINTRAY_API_KEY "https://api.bintray.com/content/noneid/otus-cpp-2020-deb/helloworld/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=bionic;deb_component=main;deb_architecture=amd64;publish=1"
+  on:
+    all_branches: true
