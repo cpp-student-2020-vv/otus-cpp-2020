@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.2)
 project(homeworks VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 add_subdirectory(hw-01)
+add_subdirectory(hw-02)
 
 # configure_file(product_version.h.in product_version.h)
 
@@ -43,27 +44,27 @@ enable_testing()
 
 
 
-if (MSVC)
-    target_compile_options(ip_filter PRIVATE
-        /W4
-    )
-    target_compile_options(ver PRIVATE
-        /W4
-    )
-    target_compile_options(test_version PRIVATE
-        /W4
-    )
-else ()
-    target_compile_options(ip_filter PRIVATE
-        -Wall -Wextra -pedantic -Werror
-    )
-    target_compile_options(ver PRIVATE
-        -Wall -Wextra -pedantic -Werror
-    )
-    target_compile_options(test_version PRIVATE
-        -Wall -Wextra -pedantic -Werror
-    )
-endif()
+# if (MSVC)
+#     target_compile_options(homeworks PRIVATE
+#         /W4
+#     )
+#     target_compile_options(ver PRIVATE
+#         /W4
+#     )
+#     target_compile_options(test_version PRIVATE
+#         /W4
+#     )
+# else ()
+#     target_compile_options(homeworks PRIVATE
+#         -Wall -Wextra -pedantic -Werror
+#     )
+#     target_compile_options(ver PRIVATE
+#         -Wall -Wextra -pedantic -Werror
+#     )
+#     target_compile_options(test_version PRIVATE
+#         -Wall -Wextra -pedantic -Werror
+#     )
+# endif()
 
 
 # #pack

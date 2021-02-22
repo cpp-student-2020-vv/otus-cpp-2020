@@ -3,7 +3,9 @@
     "cSpell.enabled": true,
     "cSpell.language": ",ru",
     "cSpell.words": [
-        "otus"
+        "Factorial",
+        "otus",
+        "Аллокатор"
     ],
     "cmake.configureOnOpen": false,
     "files.associations": {

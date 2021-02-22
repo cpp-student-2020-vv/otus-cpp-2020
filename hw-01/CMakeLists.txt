@@ -2,7 +2,7 @@
 
 project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
-configure_file(product_version.h.in "${CMAKE_CURRENT_SOURCE_DIR}/product_version.h")
+configure_file(product_version.h.in "${CMAKE_BINARY_DIR}/hw-01/product_version.h")
 
 add_executable(ip_filter main.cpp)
 add_library(ver ver.cpp)
@@ -41,27 +41,27 @@ add_test(test_ip_filter_controller test_ip_filter_controller)
 
 
 
-# if (MSVC)
-#     target_compile_options(ip_filter PRIVATE
-#         /W4
-#     )
-#     target_compile_options(ver PRIVATE
-#         /W4
-#     )
-#     target_compile_options(test_version PRIVATE
-#         /W4
-#     )
-# else ()
-#     target_compile_options(ip_filter PRIVATE
-#         -Wall -Wextra -pedantic -Werror
-#     )
-#     target_compile_options(ver PRIVATE
-#         -Wall -Wextra -pedantic -Werror
-#     )
-#     target_compile_options(test_version PRIVATE
-#         -Wall -Wextra -pedantic -Werror
-#     )
-# endif()
+if (MSVC)
+    target_compile_options(ip_filter PRIVATE
+        /W4
+    )
+    target_compile_options(ver PRIVATE
+        /W4
+    )
+    target_compile_options(test_version PRIVATE
+        /W4
+    )
+else ()
+    target_compile_options(ip_filter PRIVATE
+        -Wall -Wextra -pedantic -Werror
+    )
+    target_compile_options(ver PRIVATE
+        -Wall -Wextra -pedantic -Werror
+    )
+    target_compile_options(test_version PRIVATE
+        -Wall -Wextra -pedantic -Werror
+    )
+endif()
 
 
 #pack
