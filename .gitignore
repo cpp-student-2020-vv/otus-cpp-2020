@@ -1,5 +1,6 @@
 #Cmake build dir
-build/*
+**/build/*
+#hw-02/acm/build/*
 
 #VS Code specific files
 .vscode/*
@@ -33,3 +34,4 @@ build/*
 *.exe
 *.out
 *.app
+
