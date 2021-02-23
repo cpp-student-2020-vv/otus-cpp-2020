@@ -64,6 +64,7 @@
         "cinttypes": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "forward_list": "cpp"
     }
 }
